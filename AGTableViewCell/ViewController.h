@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AGTableViewCell.h"
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
 
 @end

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D756B0581BB546C900C2AB01 /* AGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D756B0571BB546C900C2AB01 /* AGTableViewCell.m */; };
+		D756B05F1BB8E9E300C2AB01 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D756B05B1BB8E9E300C2AB01 /* UIView+AutoLayout.m */; };
+		D756B0601BB8E9E300C2AB01 /* UIView+RSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D756B05E1BB8E9E300C2AB01 /* UIView+RSAdditions.m */; };
+		D756B0631BB91B5000C2AB01 /* AGTableViewRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = D756B0621BB91B5000C2AB01 /* AGTableViewRowAction.m */; };
 		D781B08F1BB1453A008AA678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D781B08E1BB1453A008AA678 /* main.m */; };
 		D781B0921BB1453A008AA678 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D781B0911BB1453A008AA678 /* AppDelegate.m */; };
 		D781B0951BB1453A008AA678 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D781B0941BB1453A008AA678 /* ViewController.m */; };
@@ -27,6 +31,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D756B0561BB546C900C2AB01 /* AGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTableViewCell.h; sourceTree = "<group>"; };
+		D756B0571BB546C900C2AB01 /* AGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTableViewCell.m; sourceTree = "<group>"; };
+		D756B05A1BB8E9E300C2AB01 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		D756B05B1BB8E9E300C2AB01 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		D756B05C1BB8E9E300C2AB01 /* UIView+LecarxCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LecarxCategory.h"; sourceTree = "<group>"; };
+		D756B05D1BB8E9E300C2AB01 /* UIView+RSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RSAdditions.h"; sourceTree = "<group>"; };
+		D756B05E1BB8E9E300C2AB01 /* UIView+RSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RSAdditions.m"; sourceTree = "<group>"; };
+		D756B0611BB91B5000C2AB01 /* AGTableViewRowAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTableViewRowAction.h; sourceTree = "<group>"; };
+		D756B0621BB91B5000C2AB01 /* AGTableViewRowAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTableViewRowAction.m; sourceTree = "<group>"; };
 		D781B0891BB1453A008AA678 /* AGTableViewCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGTableViewCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D781B08D1BB1453A008AA678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D781B08E1BB1453A008AA678 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +73,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D756B0551BB546C900C2AB01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D756B0561BB546C900C2AB01 /* AGTableViewCell.h */,
+				D756B0571BB546C900C2AB01 /* AGTableViewCell.m */,
+				D756B0611BB91B5000C2AB01 /* AGTableViewRowAction.h */,
+				D756B0621BB91B5000C2AB01 /* AGTableViewRowAction.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D756B0591BB8E9E300C2AB01 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				D756B05A1BB8E9E300C2AB01 /* UIView+AutoLayout.h */,
+				D756B05B1BB8E9E300C2AB01 /* UIView+AutoLayout.m */,
+				D756B05C1BB8E9E300C2AB01 /* UIView+LecarxCategory.h */,
+				D756B05D1BB8E9E300C2AB01 /* UIView+RSAdditions.h */,
+				D756B05E1BB8E9E300C2AB01 /* UIView+RSAdditions.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		D781B0801BB1453A008AA678 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +117,8 @@
 		D781B08B1BB1453A008AA678 /* AGTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				D756B0591BB8E9E300C2AB01 /* UIView */,
+				D756B0551BB546C900C2AB01 /* View */,
 				D781B0901BB1453A008AA678 /* AppDelegate.h */,
 				D781B0911BB1453A008AA678 /* AppDelegate.m */,
 				D781B0931BB1453A008AA678 /* ViewController.h */,
@@ -219,9 +257,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D756B05F1BB8E9E300C2AB01 /* UIView+AutoLayout.m in Sources */,
 				D781B0951BB1453A008AA678 /* ViewController.m in Sources */,
 				D781B0921BB1453A008AA678 /* AppDelegate.m in Sources */,
+				D756B0581BB546C900C2AB01 /* AGTableViewCell.m in Sources */,
 				D781B08F1BB1453A008AA678 /* main.m in Sources */,
+				D756B0601BB8E9E300C2AB01 /* UIView+RSAdditions.m in Sources */,
+				D756B0631BB91B5000C2AB01 /* AGTableViewRowAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +458,7 @@
 				D781B0AE1BB1453A008AA678 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D781B0AF1BB1453A008AA678 /* Build configuration list for PBXNativeTarget "AGTableViewCellTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +467,7 @@
 				D781B0B11BB1453A008AA678 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
