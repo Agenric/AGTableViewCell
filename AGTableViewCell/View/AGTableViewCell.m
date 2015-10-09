@@ -17,9 +17,7 @@
     BOOL _isMoving;
     BOOL _hasMoved;
 }
-@property (nonatomic, assign) AGTableViewCellStyle style;
 @property (nonatomic, strong) NSMutableArray *rightActionButtons;
-@property (nonatomic, strong) NSMutableArray *leftActionButtons;
 
 @property (nonatomic, assign) CGFloat touchBeganPointX;
 @property (nonatomic, assign) CGFloat buttonWidth;
@@ -29,12 +27,11 @@
 @end
 
 @implementation AGTableViewCell
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier inTableView:(UITableView *)tableView withAG_Style:(AGTableViewCellStyle)ag_Style {
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier inTableView:(UITableView *)tableView {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
         [self.contentView setBackgroundColor:[UIColor grayColor]];
-        self.style = ag_Style;
         self.tableView = tableView;
         self.touchBeganPointX = 0.0f;
         self.dragAnimationDuration = 0.2f;
@@ -225,38 +222,14 @@
 #pragma mark - getActionsArray
 - (void)getActionsArray {
     self.indexPath = [self.tableView indexPathForCell:self];
-    switch (self.style) {
-        case AGTableViewCellStyleLeftItems:{
-            if ([self.delegate respondsToSelector:@selector(AGTableView:leftEditActionsForRowAtIndexPath:)]) {
-                self.leftActionButtons = [[self.delegate AGTableView:self.tableView leftEditActionsForRowAtIndexPath:self.indexPath] mutableCopy];
-            }
+    if ([self.delegate respondsToSelector:@selector(AGTableView:editActionsForRowAtIndexPath:)]) {
+        self.rightActionButtons = [[self.delegate AGTableView:self.tableView editActionsForRowAtIndexPath:self.indexPath] mutableCopy];
+        CGFloat buttonWidth = (ScreenWidth / 2.0f) / self.rightActionButtons.count;
+        self.buttonWidth = buttonWidth;
+        for (AGTableViewRowAction *action in self.rightActionButtons) {
+            action.frame = CGRectMake(ScreenWidth, 0.0f, buttonWidth, self.height);
+            [action addTarget:self action:@selector(rightActionDidSelected:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:action];
         }
-            break;
-        case AGTableViewCellStyleRightItems:{
-            if ([self.delegate respondsToSelector:@selector(AGTableView:rightEditActionsForRowAtIndexPath:)]) {
-                self.rightActionButtons = [[self.delegate AGTableView:self.tableView rightEditActionsForRowAtIndexPath:self.indexPath] mutableCopy];
-                CGFloat buttonWidth = (ScreenWidth / 2.0f) / self.rightActionButtons.count;
-                self.buttonWidth = buttonWidth;
-                for (AGTableViewRowAction *action in self.rightActionButtons) {
-                    action.frame = CGRectMake(ScreenWidth, 0.0f, buttonWidth, self.height);
-                    [action addTarget:self action:@selector(rightActionDidSelected:) forControlEvents:UIControlEventTouchUpInside];
-                    [self addSubview:action];
-                }
-            }
-        }
-            break;
-        case AGTableViewCellStyleBoth:{
-            if ([self.delegate respondsToSelector:@selector(AGTableView:leftEditActionsForRowAtIndexPath:)]) {
-                self.leftActionButtons = [[self.delegate AGTableView:self.tableView leftEditActionsForRowAtIndexPath:self.indexPath] mutableCopy];
-            }
-            if ([self.delegate respondsToSelector:@selector(AGTableView:rightEditActionsForRowAtIndexPath:)]) {
-                self.rightActionButtons = [[self.delegate AGTableView:self.tableView rightEditActionsForRowAtIndexPath:self.indexPath] mutableCopy];
-            }
-        }
-            break;
-        case AGTableViewCellStyleDefault:
-        default:
-            break;
-    }
-}
+    }}
 @end

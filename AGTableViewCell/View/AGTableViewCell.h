@@ -9,40 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AGTableViewRowAction.h"
 
-/*!
- * @brief  AGTableViewCell的编辑形式
- */
-typedef NS_ENUM(NSInteger, AGTableViewCellStyle){
-    /*!
-     * 默认为 UITableViewCell 的样式
-     */
-    AGTableViewCellStyleDefault = 0,
-    /*!
-     * Cell右边呼出菜单选项模式
-     */
-    AGTableViewCellStyleRightItems,
-    /*!
-     * Cell左边呼出菜单选项模式
-     */
-    AGTableViewCellStyleLeftItems,
-    /*!
-     * Cell左右均可呼出菜单模式
-     */
-    AGTableViewCellStyleBoth
-};
-
 @protocol AGTableViewCellDelegate <NSObject>
-
-@required
-/*!
- * @brief  获取每一行Cell的编辑样式
- *
- * @param tableView 父级tableView
- * @param indexPath 索引
- *
- * @return 编辑样式
- */
-- (AGTableViewCellStyle)AGTableView:(UITableView *)tableView editStyleForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @optional
 /*!
@@ -53,8 +20,7 @@ typedef NS_ENUM(NSInteger, AGTableViewCellStyle){
  *
  * @return 该行Cell的按钮集合
  */
-- (NSArray *)AGTableView:(UITableView *)tableView leftEditActionsForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (NSArray *)AGTableView:(UITableView *)tableView rightEditActionsForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (NSArray *)AGTableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 /*!
  * @brief  每一行Cell的动作触发回调
@@ -84,5 +50,5 @@ typedef NS_ENUM(NSInteger, AGTableViewCellStyle){
 @property (nonatomic, assign) BOOL isEditing;
 @property (nonatomic, weak) id<AGTableViewCellDelegate> delegate;
 
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier inTableView:(UITableView *)tableView withAG_Style:(AGTableViewCellStyle)ag_Style;
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier inTableView:(UITableView *)tableView;
 @end
