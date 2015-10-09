@@ -14,9 +14,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "-AGTableView:didSelectActionIndex:forRowAtIndexPath:"
-            landmarkType = "5">
+            endingLineNumber = "108">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,9 +44,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "-AGTableView:didSelectActionIndex:forRowAtIndexPath:"
-            landmarkType = "5">
+            endingLineNumber = "117">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,9 +58,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "-AGTableView:didSelectActionIndex:forRowAtIndexPath:"
-            landmarkType = "5">
+            endingLineNumber = "115">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
