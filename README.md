@@ -1,13 +1,12 @@
 # AGTableViewCell
----
-> 模仿iOS8.0邮件中侧滑效果
+Simulate iOS8.0 mail skidding to delete messages.
 
-### 使用方法
+## Usage
 ---
-* 创建可复用的AGTableViewCell
+* Create can reusable AGTableViewCell
 
     ```- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:    (NSString *)reuseIdentifier inTableView:(UITableView *)tableView;```
-* 实现AGTableViewCell的代理方法 - 获得每一行Cell对应的按钮集合
+* Implement proxy method for AGTableViewCell - Get a set of buttons for each row of Cell
 
     ```- (NSArray *)AGTableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath;```
 
